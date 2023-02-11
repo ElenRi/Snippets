@@ -17,6 +17,9 @@ class Snippet(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE,
                              blank=True, null=True)
     # public = models.BooleanField()
+class Meta:
+    ordering = {'name', 'creation_date'}
+
 
 class Comment(models.Model):
    text = models.TextField(max_length=1000)
